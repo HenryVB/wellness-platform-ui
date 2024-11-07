@@ -1,3 +1,5 @@
+"use client"
+
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { 
@@ -20,6 +22,7 @@ import {
   ArrowRight
 } from "lucide-react"
 import Image from "next/image"
+import { useRouter } from 'next/navigation'
 
 const WellnessDimension = ({ icon: Icon, title, description }) => (
   <Card className="group h-full transition-all hover:shadow-lg hover:border-pink-200">
@@ -54,6 +57,8 @@ const SpecialistCard = ({ icon: Icon, title, description }) => (
 )
 
 export default function Component() {
+  const router = useRouter();
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -74,7 +79,11 @@ export default function Component() {
             <p className="text-xl text-gray-600 mb-10 max-w-2xl mx-auto">
               Tu plataforma digital para el bienestar integral, conectándote con especialistas globales para mejorar tu salud física, mental, emocional, espiritual y financiera.
             </p>
-            <Button size="lg" className="bg-pink-600 hover:bg-pink-700 text-white px-8 py-6 text-lg rounded-full transition-all hover:shadow-lg hover:-translate-y-0.5">
+            <Button 
+              size="lg" 
+              className="bg-pink-600 hover:bg-pink-700 text-white px-8 py-6 text-lg rounded-full transition-all hover:shadow-lg hover:-translate-y-0.5"
+              onClick={() => router.push('/test')}
+            >
               Realizar Test de Autodiagnóstico
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
