@@ -24,21 +24,29 @@ import {
 import Image from "next/image"
 import { useRouter } from 'next/navigation'
 
-const WellnessDimension = ({ icon: Icon, title, description }) => (
-  <Card className="group h-full transition-all hover:shadow-lg hover:border-pink-200">
-    <CardHeader>
-      <div className="flex items-center gap-3">
-        <div className="rounded-full bg-pink-50 p-2 group-hover:bg-pink-100 transition-colors">
-          <Icon className="h-6 w-6 text-pink-500" />
+const WellnessDimension = ({ icon: Icon, title, description, dimension }) => {
+  const router = useRouter();
+  const dimensionKey = dimension.toLowerCase();
+  
+  return (
+    <Card 
+      className="group h-full transition-all hover:shadow-lg hover:border-pink-200 cursor-pointer"
+      onClick={() => router.push(`/specialists?dimension=${dimensionKey}`)}
+    >
+      <CardHeader>
+        <div className="flex items-center gap-3">
+          <div className="rounded-full bg-pink-50 p-2 group-hover:bg-pink-100 transition-colors">
+            <Icon className="h-6 w-6 text-pink-500" />
+          </div>
+          <CardTitle className="text-xl">{title}</CardTitle>
         </div>
-        <CardTitle className="text-xl">{title}</CardTitle>
-      </div>
-    </CardHeader>
-    <CardContent>
-      <CardDescription className="text-base">{description}</CardDescription>
-    </CardContent>
-  </Card>
-)
+      </CardHeader>
+      <CardContent>
+        <CardDescription className="text-base">{description}</CardDescription>
+      </CardContent>
+    </Card>
+  );
+};
 
 const SpecialistCard = ({ icon: Icon, title, description }) => (
   <Card className="group h-full transition-all hover:shadow-lg hover:-translate-y-1">
@@ -150,26 +158,31 @@ export default function Component() {
               icon={Heart}
               title="Físico"
               description="Mejora tu salud física con rutinas personalizadas y seguimiento de hábitos saludables."
+              dimension="physical"
             />
             <WellnessDimension
               icon={Brain}
               title="Mental"
               description="Desarrolla claridad mental y fortaleza cognitiva con prácticas efectivas."
+              dimension="mental"
             />
             <WellnessDimension
               icon={Smile}
               title="Emocional"
               description="Cultiva inteligencia emocional y equilibrio en tus relaciones."
+              dimension="emotional"
             />
             <WellnessDimension
               icon={Sun}
               title="Espiritual"
               description="Encuentra paz interior y propósito a través de prácticas contemplativas."
+              dimension="spiritual"
             />
             <WellnessDimension
               icon={Coins}
               title="Financiero"
               description="Alcanza estabilidad y libertad financiera con estrategias probadas."
+              dimension="financial"
             />
           </div>
         </div>
