@@ -11,4 +11,6 @@ export type Specialist = {
   description: string;
   rating: 0 | 1 | 2 | 3 | 4 | 5; // Now only whole numbers
   reviewCount: number;
+  location: string; // Nueva propiedad
+  availability?: Date[]; // Nueva propiedad opcional
 }
