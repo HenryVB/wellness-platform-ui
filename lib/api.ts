@@ -2,7 +2,7 @@
 import { Question, TestResult, WellnessDimension, RoadmapStep } from '@/types/test';
 
 // Score thresholds
-const DIMENSION_THRESHOLD = 0.6; // 60% score to include dimension
+const DIMENSION_THRESHOLD = 0.4; // 60% score to include dimension
 const MAX_DIMENSIONS = 5; // Maximum dimensions to include in roadmap
 
 function processAnswers(answers: Record<string, string[]>): TestResult {
@@ -89,50 +89,50 @@ const mockQuestions: Question[] = [
                 },
                 {
                         id: '1b',
-                        text: 'Hacer ejercicio regularmente',
+                        text: 'Comer de forma saludable',
                         dimension: 'physical',
-                        weight: 2
-                },
-                {
-                        id: '1c',
-                        text: 'Practicar la meditación diaria',
-                        dimension: 'mental',
                         weight: 5
                 },
                 {
+                        id: '1c',
+                        text: 'Hacer ejercicio regularmente',
+                        dimension: 'physical',
+                        weight: 3
+                },
+                {
                         id: '1d',
-                        text: 'Establecer un presupuesto mensual',
-                        dimension: 'financial',
-                        weight: 1
+                        text: 'Ser más productivo',
+                        dimension: 'mental',
+                        weight: 4
                 },
                 {
                         id: '1e',
-                        text: 'Participar en actividades sociales',
+                        text: 'Recuperarme de estar agotado emocionalmente',
                         dimension: 'emotional',
                         weight: 3
                 },
                 {
                         id: '1f',
-                        text: 'Leer libros de desarrollo personal',
-                        dimension: 'spiritual',
+                        text: 'Superar una decepción',
+                        dimension: 'emotional',
                         weight: 2
                 },
                 {
                         id: '1g',
-                        text: 'Mejorar la alimentación',
-                        dimension: 'physical',
+                        text: 'Tratar el estrés y la ansiedad',
+                        dimension: 'mental',
                         weight: 5
                 },
                 {
                         id: '1h',
-                        text: 'Aprender una nueva habilidad',
-                        dimension: 'mental',
+                        text: 'Tener una vida más alegre',
+                        dimension: 'emotional',
                         weight: 1
                 },
                 {
                         id: '1i',
-                        text: 'Dedicar tiempo a la reflexión personal',
-                        dimension: 'spiritual',
+                        text: 'Tener solvencia económica',
+                        dimension: 'financial',
                         weight: 4
                 }
         ]
@@ -156,40 +156,46 @@ const mockQuestions: Question[] = [
                 },
                 {
                         id: '2c',
-                        text: 'Mejorar mi alimentación',
-                        dimension: 'physical',
+                        text: 'Superar las emociones negativas',
+                        dimension: 'emotional',
                         weight: 5
                 },
                 {
                         id: '2d',
-                        text: 'Aumentar mi resiliencia emocional',
-                        dimension: 'emotional',
+                        text: 'Cambiar mis patrones de pensamiento',
+                        dimension: 'mental',
                         weight: 1
                 },
                 {
                         id: '2e',
-                        text: 'Gestionar mejor mi tiempo',
+                        text: 'Organizar mi espacio y mi vida',
                         dimension: 'mental',
                         weight: 4
                 },
                 {
                         id: '2f',
-                        text: 'Desarrollar una práctica de mindfulness',
-                        dimension: 'spiritual',
+                        text: 'Dejar un hábito malo',
+                        dimension: 'physical',
                         weight: 2
                 },
                 {
                         id: '2g',
-                        text: 'Fortalecer mis relaciones interpersonales',
+                        text: 'Mejorar mis relaciones',
                         dimension: 'emotional',
                         weight: 3
                 },
                 {
                         id: '2h',
-                        text: 'Mejorar mis habilidades financieras',
-                        dimension: 'financial',
+                        text: 'Mejorar mi cuidado personal',
+                        dimension: 'physical',
                         weight: 4
                 },
+                {
+                        id: '2i',
+                        text: 'Ahorrar para mi jubilación',
+                        dimension: 'financial',
+                        weight: 5
+                }
         ]
     },
     {

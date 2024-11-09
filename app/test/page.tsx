@@ -68,12 +68,21 @@ export default function TestPage() {
     loadQuestions();
   }, []);
 
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading) return (
+    <div className="min-h-screen flex items-center justify-center">
+      <div className="text-center space-y-4">
+        <div className="w-16 h-16 border-4 border-pink-600/20 border-t-pink-600 rounded-full animate-spin mx-auto"/>
+        <p className="text-gray-600">Cargando test...</p>
+      </div>
+    </div>
+  );
 
   return (
     <TestProvider initialQuestions={questions}>
-      <div className="container mx-auto px-4 py-8">
-        <TestContent />
+      <div className="min-h-screen bg-gradient-to-b from-pink-50/80 to-white">
+        <div className="container mx-auto px-4 py-12 max-w-3xl">
+          <TestContent />
+        </div>
       </div>
     </TestProvider>
   );
