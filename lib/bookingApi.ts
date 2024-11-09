@@ -1,7 +1,6 @@
 // lib/bookingApi.ts
-import { BookingState } from '@/types/specialist';
 
-export async function createBooking(bookingState: BookingState) {
+export async function createBooking() {
   await new Promise(resolve => setTimeout(resolve, 1000));
   return {
     success: true,

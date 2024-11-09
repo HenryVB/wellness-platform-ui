@@ -26,7 +26,7 @@ export default function SpecialistsClient() {
     dateRange: undefined as DateRange | undefined,
     rating: 0
   })
-  const [selectedSpecialist, setSelectedSpecialist] = useState<Specialist | null>(null)
+  const [] = useState<Specialist | null>(null)
 
   const dimensions: WellnessDimension[] = [
     'physical',

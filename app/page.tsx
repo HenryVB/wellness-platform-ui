@@ -24,7 +24,14 @@ import {
 import Image from "next/image"
 import { useRouter } from 'next/navigation'
 
-const WellnessDimension = ({ icon: Icon, title, description, dimension }) => {
+interface WellnessDimensionProps {
+  icon: React.ElementType;
+  title: string;
+  description: string;
+  dimension: string;
+}
+
+const WellnessDimension = ({ icon: Icon, title, description, dimension }: WellnessDimensionProps) => {
   const router = useRouter();
   const dimensionKey = dimension.toLowerCase();
   
@@ -48,7 +55,13 @@ const WellnessDimension = ({ icon: Icon, title, description, dimension }) => {
   );
 };
 
-const SpecialistCard = ({ icon: Icon, title, description }) => (
+interface SpecialistCardProps {
+  icon: React.ElementType;
+  title: string;
+  description: string;
+}
+
+const SpecialistCard = ({ icon: Icon, title, description }: SpecialistCardProps) => (
   <Card className="group h-full transition-all hover:shadow-lg hover:-translate-y-1">
     <CardHeader>
       <div className="flex items-center gap-3">

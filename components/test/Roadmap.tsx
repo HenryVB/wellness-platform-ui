@@ -1,6 +1,6 @@
 // components/test/Roadmap.tsx
 import { useTest } from '@/contexts/TestContext';
-import { RoadmapStep, WellnessDimension } from '@/types/test';
+import { WellnessDimension } from '@/types/test';
 import { ArrowLeft } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { Button } from '../ui/button';
