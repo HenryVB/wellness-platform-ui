@@ -14,7 +14,9 @@ const mockSpecialists: Specialist[] = [
     rating: 5,
     reviewCount: 127,
     location: 'Lima, Perú',
-    availability: [new Date('2024-10-05'), new Date('2025-02-15')]
+    availability: [new Date('2024-10-05'), new Date('2025-02-15')],
+    sessions: [],
+    availableTimeSlots: []
   },
   {
     id: 'p2',
@@ -27,7 +29,9 @@ const mockSpecialists: Specialist[] = [
     rating: 4,
     reviewCount: 243,
     location: 'Bogotá, Colombia',
-    availability: [new Date('2024-11-10'), new Date('2025-01-20')]
+    availability: [new Date('2024-11-10'), new Date('2025-01-20')],
+    sessions: [],
+    availableTimeSlots: []
   },
   {
     id: 'p3',
@@ -40,7 +44,9 @@ const mockSpecialists: Specialist[] = [
     rating: 5,
     reviewCount: 89,
     location: 'Santiago, Chile',
-    availability: [new Date('2024-10-20'), new Date('2025-02-05')]
+    availability: [new Date('2024-10-20'), new Date('2025-02-05')],
+    sessions: [],
+    availableTimeSlots: []
   },
   {
     id: 'p4',
@@ -53,7 +59,9 @@ const mockSpecialists: Specialist[] = [
     rating: 4,
     reviewCount: 156,
     location: 'Madrid, España',
-    availability: [new Date('2024-12-01'), new Date('2025-01-25')]
+    availability: [new Date('2024-12-01'), new Date('2025-01-25')],
+    sessions: [],
+    availableTimeSlots: []
   },
 
   // Mental specialists
@@ -68,7 +76,9 @@ const mockSpecialists: Specialist[] = [
     rating: 5,
     reviewCount: 178,
     location: 'Buenos Aires, Argentina',
-    availability: [new Date('2024-10-15'), new Date('2025-02-10')]
+    availability: [new Date('2024-10-15'), new Date('2025-02-10')],
+    sessions: [],
+    availableTimeSlots: []
   },
   {
     id: 'm2',
@@ -81,7 +91,9 @@ const mockSpecialists: Specialist[] = [
     rating: 5,
     reviewCount: 210,
     location: 'Ciudad de México, México',
-    availability: [new Date('2024-11-05'), new Date('2025-01-30')]
+    availability: [new Date('2024-11-05'), new Date('2025-01-30')],
+    sessions: [],
+    availableTimeSlots: []
   },
   {
     id: 'm3',
@@ -94,7 +106,9 @@ const mockSpecialists: Specialist[] = [
     rating: 4,
     reviewCount: 150,
     location: 'Toronto, Canadá',
-    availability: [new Date('2024-10-25'), new Date('2025-02-20')]
+    availability: [new Date('2024-10-25'), new Date('2025-02-20')],
+    sessions: [],
+    availableTimeSlots: []
   },
   {
     id: 'm4',
@@ -107,7 +121,9 @@ const mockSpecialists: Specialist[] = [
     rating: 5,
     reviewCount: 175,
     location: 'Miami, EE.UU.',
-    availability: [new Date('2024-12-10'), new Date('2025-02-25')]
+    availability: [new Date('2024-12-10'), new Date('2025-02-25')],
+    sessions: [],
+    availableTimeSlots: []
   },
 
   // Emotional specialists
@@ -122,7 +138,9 @@ const mockSpecialists: Specialist[] = [
     rating: 5,
     reviewCount: 134,
     location: 'Barcelona, España',
-    availability: [new Date('2024-10-12'), new Date('2025-01-22')]
+    availability: [new Date('2024-10-12'), new Date('2025-01-22')],
+    sessions: [],
+    availableTimeSlots: []
   },
   {
     id: 'e2',
@@ -135,7 +153,9 @@ const mockSpecialists: Specialist[] = [
     rating: 5,
     reviewCount: 120,
     location: 'Lima, Perú',
-    availability: [new Date('2024-11-18'), new Date('2025-02-18')]
+    availability: [new Date('2024-11-18'), new Date('2025-02-18')],
+    sessions: [],
+    availableTimeSlots: []
   },
   {
     id: 'e3',
@@ -148,7 +168,9 @@ const mockSpecialists: Specialist[] = [
     rating: 4,
     reviewCount: 95,
     location: 'Valparaíso, Chile',
-    availability: [new Date('2024-10-30'), new Date('2025-01-28')]
+    availability: [new Date('2024-10-30'), new Date('2025-01-28')],
+    sessions: [],
+    availableTimeSlots: []
   },
   {
     id: 'e4',
@@ -161,7 +183,9 @@ const mockSpecialists: Specialist[] = [
     rating: 5,
     reviewCount: 110,
     location: 'Caracas, Venezuela',
-    availability: [new Date('2024-12-05'), new Date('2025-02-28')]
+    availability: [new Date('2024-12-05'), new Date('2025-02-28')],
+    sessions: [],
+    availableTimeSlots: []
   },
   {
     id: 'e5',
@@ -174,7 +198,9 @@ const mockSpecialists: Specialist[] = [
     rating: 4,
     reviewCount: 130,
     location: 'Quito, Ecuador',
-    availability: [new Date('2024-11-25'), new Date('2025-01-15')]
+    availability: [new Date('2024-11-25'), new Date('2025-01-15')],
+    sessions: [],
+    availableTimeSlots: []
   },
 
   // Spiritual specialists
@@ -189,7 +215,9 @@ const mockSpecialists: Specialist[] = [
     rating: 5,
     reviewCount: 92,
     location: 'Cusco, Perú',
-    availability: [new Date('2024-10-08'), new Date('2025-02-22')]
+    availability: [new Date('2024-10-08'), new Date('2025-02-22')],
+    sessions: [],
+    availableTimeSlots: []
   },
   {
     id: 's2',
@@ -202,7 +230,9 @@ const mockSpecialists: Specialist[] = [
     rating: 4,
     reviewCount: 105,
     location: 'La Paz, Bolivia',
-    availability: [new Date('2024-11-12'), new Date('2025-02-02')]
+    availability: [new Date('2024-11-12'), new Date('2025-02-02')],
+    sessions: [],
+    availableTimeSlots: []
   },
   {
     id: 's3',
@@ -215,7 +245,9 @@ const mockSpecialists: Specialist[] = [
     rating: 4,
     reviewCount: 120,
     location: 'Asunción, Paraguay',
-    availability: [new Date('2024-12-18'), new Date('2025-02-28')]
+    availability: [new Date('2024-12-18'), new Date('2025-02-28')],
+    sessions: [],
+    availableTimeSlots: []
   },
   {
     id: 's4',
@@ -228,7 +260,9 @@ const mockSpecialists: Specialist[] = [
     rating: 5,
     reviewCount: 130,
     location: 'Montevideo, Uruguay',
-    availability: [new Date('2024-10-20'), new Date('2025-01-30')]
+    availability: [new Date('2024-10-20'), new Date('2025-01-30')],
+    sessions: [],
+    availableTimeSlots: []
   },
   {
     id: 's5',
@@ -241,7 +275,9 @@ const mockSpecialists: Specialist[] = [
     rating: 4,
     reviewCount: 140,
     location: 'São Paulo, Brasil',
-    availability: [new Date('2024-11-22'), new Date('2025-02-07')]
+    availability: [new Date('2024-11-22'), new Date('2025-02-07')],
+    sessions: [],
+    availableTimeSlots: []
   },
   {
     id: 's6',
@@ -254,7 +290,9 @@ const mockSpecialists: Specialist[] = [
     rating: 4,
     reviewCount: 105,
     location: 'Guayaquil, Ecuador',
-    availability: [new Date('2024-10-25'), new Date('2025-02-09')]
+    availability: [new Date('2024-10-25'), new Date('2025-02-09')],
+    sessions: [],
+    availableTimeSlots: []
   },
 
   // Financial specialists
@@ -269,7 +307,9 @@ const mockSpecialists: Specialist[] = [
     rating: 4,
     reviewCount: 156,
     location: 'Madrid, España',
-    availability: [new Date('2024-10-10'), new Date('2025-02-16')]
+    availability: [new Date('2024-10-10'), new Date('2025-02-16')],
+    sessions: [],
+    availableTimeSlots: []
   },
   {
     id: 'f2',
@@ -282,7 +322,9 @@ const mockSpecialists: Specialist[] = [
     rating: 5,
     reviewCount: 178,
     location: 'Barcelona, España',
-    availability: [new Date('2024-11-03'), new Date('2025-01-18')]
+    availability: [new Date('2024-11-03'), new Date('2025-01-18')],
+    sessions: [],
+    availableTimeSlots: []
   },
   {
     id: 'f3',
@@ -295,7 +337,9 @@ const mockSpecialists: Specialist[] = [
     rating: 5,
     reviewCount: 210,
     location: 'Valencia, España',
-    availability: [new Date('2024-12-05'), new Date('2025-02-20')]
+    availability: [new Date('2024-12-05'), new Date('2025-02-20')],
+    sessions: [],
+    availableTimeSlots: []
   },
   {
     id: 'f4',
@@ -308,7 +352,9 @@ const mockSpecialists: Specialist[] = [
     rating: 4,
     reviewCount: 189,
     location: 'Bilbao, España',
-    availability: [new Date('2024-10-07'), new Date('2025-01-22')]
+    availability: [new Date('2024-10-07'), new Date('2025-01-22')],
+    sessions: [],
+    availableTimeSlots: []
   },
   {
     id: 'f5',
@@ -321,7 +367,9 @@ const mockSpecialists: Specialist[] = [
     rating: 5,
     reviewCount: 200,
     location: 'Sevilla, España',
-    availability: [new Date('2024-11-09'), new Date('2025-02-24')]
+    availability: [new Date('2024-11-09'), new Date('2025-02-24')],
+    sessions: [],
+    availableTimeSlots: []
   },
   {
     id: 'f6',
@@ -334,7 +382,9 @@ const mockSpecialists: Specialist[] = [
     rating: 5,
     reviewCount: 178,
     location: 'Granada, España',
-    availability: [new Date('2024-12-11'), new Date('2025-02-26')]
+    availability: [new Date('2024-12-11'), new Date('2025-02-26')],
+    sessions: [],
+    availableTimeSlots: []
   },
   {
     id: 'f7',
@@ -347,7 +397,9 @@ const mockSpecialists: Specialist[] = [
     rating: 5,
     reviewCount: 210,
     location: 'Zaragoza, España',
-    availability: [new Date('2024-10-13'), new Date('2025-02-28')]
+    availability: [new Date('2024-10-13'), new Date('2025-02-28')],
+    sessions: [],
+    availableTimeSlots: []
   },
   {
     id: 'f8',
@@ -360,7 +412,9 @@ const mockSpecialists: Specialist[] = [
     rating: 4,
     reviewCount: 189,
     location: 'Malaga, España',
-    availability: [new Date('2024-11-15'), new Date('2025-02-30')]
+    availability: [new Date('2024-11-15'), new Date('2025-02-30')],
+    sessions: [],
+    availableTimeSlots: []
   },
   {
     id: 'f9',
@@ -373,9 +427,31 @@ const mockSpecialists: Specialist[] = [
     rating: 5,
     reviewCount: 200,
     location: 'Murcia, España',
-    availability: [new Date('2024-10-17'), new Date('2025-02-02')]
+    availability: [new Date('2024-10-17'), new Date('2025-02-02')],
+    sessions: [],
+    availableTimeSlots: []
   }
 ];
+
+// Update specialist mock data to include sessions
+mockSpecialists.forEach(specialist => {
+  specialist.sessions = [
+    {
+      id: 'trial',
+      name: 'Sesión de Prueba',
+      description: 'Una sesión inicial para conocer al especialista y su metodología',
+      duration: 30,
+      price: 0
+    },
+    {
+      id: 'regular',
+      name: 'Sesión Regular', 
+      description: 'Sesión completa personalizada según tus necesidades',
+      duration: specialist.sessionLength,
+      price: specialist.price
+    }
+  ];
+});
 
 export async function fetchSpecialists(dimension?: WellnessDimension): Promise<Specialist[]> {
   // Simular retraso de API
