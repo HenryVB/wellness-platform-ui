@@ -238,7 +238,10 @@ export default function Component() {
               </CardContent>
             </Card>
 
-            <Card className="group h-full bg-gradient-to-br from-pink-50/50 to-white hover:shadow-lg transition-all">
+            <Card 
+              className="group h-full bg-gradient-to-br from-pink-50/50 to-white hover:shadow-lg transition-all cursor-pointer"
+              onClick={() => router.push('/community')}
+            >
               <CardHeader>
                 <div className="flex items-center gap-3">
                   <div className="rounded-full bg-pink-100/50 p-2 group-hover:bg-pink-100 transition-colors">
