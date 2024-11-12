@@ -200,7 +200,7 @@ const mockQuestions: Question[] = [
     },
     {
         id: '3',
-        text: '¿Dirías que vives salusable y consciente?',
+        text: '¿Dirías que vives saludable y consciente?',
         type: 'single',
         options: [
                 { 

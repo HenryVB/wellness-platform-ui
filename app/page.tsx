@@ -162,7 +162,7 @@ export default function Component() {
       {/* Wellness Dimensions */}
       <section className="py-20 px-4 bg-gradient-to-b from-white to-pink-50/50">
         <div className="container mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Dimensiones del Bienestar</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Esferas del Bienestar</h2>
           <p className="text-gray-600 text-center mb-12 max-w-2xl mx-auto">
             Descubre y desarrolla cada aspecto de tu bienestar integral
           </p>
