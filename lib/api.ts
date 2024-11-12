@@ -242,13 +242,13 @@ const mockQuestions: Question[] = [
                 },
                 {
                         id: '4c',
-                        text: 'No tener sufienciente tiempo',
+                        text: 'No tener suficiente tiempo',
                         dimension: 'mental',
                         weight: 3
                 },
                 {
                         id: '4d',
-                        text: 'Falta de autoestima o no sentirse como un impostor',
+                        text: 'Falta de autoestima',
                         dimension: 'emotional',
                         weight: 2
                 },
@@ -290,7 +290,7 @@ const mockQuestions: Question[] = [
                 },
                 {
                         id: '4k',
-                        text: 'Creeencias limitantes',
+                        text: 'Creencias limitantes',
                         dimension: 'spiritual',
                         weight: 1
                 }
