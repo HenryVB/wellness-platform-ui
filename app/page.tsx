@@ -19,9 +19,14 @@ import {
   CircuitBoard, 
   Flame,
   GraduationCap,
-  ArrowRight
+  ArrowRight,
+  Facebook,
+  Instagram,
+  Linkedin,
+  Music
 } from "lucide-react"
 import Image from "next/image"
+import Link from "next/link"
 import { useRouter } from 'next/navigation'
 
 interface WellnessDimensionProps {
@@ -105,9 +110,187 @@ export default function Component() {
               className="bg-pink-600 hover:bg-pink-700 text-white px-8 py-6 text-lg rounded-full transition-all hover:shadow-lg hover:-translate-y-0.5"
               onClick={() => router.push('/test')}
             >
-              Realizar Test de Autodiagnóstico
+              Inicia tu ruta de bienestar
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
+          </div>
+        </div>
+      </section>
+
+   {/* Video Presentation Section */}
+      <section className="py-24 relative bg-gradient-to-br from-pink-100/30 to-white">
+        <div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-white to-transparent"></div>
+        <div className="container mx-auto px-4">
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 inline-block bg-gradient-to-r from-pink-600 to-pink-500 bg-clip-text text-transparent">
+                Descubre IntegralmenteBien
+              </h2>
+              <div className="h-1 w-24 bg-gradient-to-r from-pink-500 to-pink-300 rounded-full mx-auto mb-8"></div>
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                Conoce de cerca nuestra visión de bienestar integral y cómo estamos transformando vidas a través de
+                nuestro enfoque holístico y personalizado.
+              </p>
+            </div>
+            
+            <div className="relative aspect-video rounded-2xl overflow-hidden shadow-xl border-4 border-white">
+              {/* Reemplazar este div con el video real cuando esté disponible */}
+              <div className="w-full h-full bg-gradient-to-br from-pink-200/50 to-pink-50 flex items-center justify-center">
+                <div className="text-center">
+                  <div className="bg-white/80 backdrop-blur-sm p-6 rounded-xl shadow-lg inline-block">
+                    <div className="w-20 h-20 bg-pink-600 rounded-full flex items-center justify-center mx-auto cursor-pointer hover:bg-pink-700 transition-colors group">
+                      <div className="w-0 h-0 border-t-8 border-b-8 border-l-16 border-t-transparent border-b-transparent border-l-white ml-1"></div>
+                    </div>
+                    <p className="mt-4 font-medium text-pink-700">Haz clic para reproducir el video</p>
+                  </div>
+                </div>
+                
+                {/* Código para implementar el video real */}
+                { 
+                <iframe 
+                  className="absolute inset-0 w-full h-full"
+                  src="https://www.youtube.com/embed/RgsyzjlQwCQ?si=3UaqXXioOU8oTsTn" 
+                  title="IntegralmenteBien: Bienestar Integral"
+                  frameBorder="0" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                  allowFullScreen>
+                </iframe>
+                }
+              </div>
+            </div>
+            
+            <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+              <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
+                <div className="rounded-full bg-pink-100 p-3 w-14 h-14 flex items-center justify-center mx-auto mb-4">
+                  <Users className="h-7 w-7 text-pink-600" />
+                </div>
+                <h3 className="font-bold text-lg mb-2 text-gray-800">Comunidad Global</h3>
+                <p className="text-gray-600">Conecta con miles de personas comprometidas con su bienestar integral.</p>
+              </div>
+              
+              <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
+                <div className="rounded-full bg-pink-100 p-3 w-14 h-14 flex items-center justify-center mx-auto mb-4">
+                  <Lightbulb className="h-7 w-7 text-pink-600" />
+                </div>
+                <h3 className="font-bold text-lg mb-2 text-gray-800">Enfoque Personalizado</h3>
+                <p className="text-gray-600">Soluciones adaptadas a tus necesidades específicas en cada área de bienestar.</p>
+              </div>
+              
+              <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
+                <div className="rounded-full bg-pink-100 p-3 w-14 h-14 flex items-center justify-center mx-auto mb-4">
+                  <Activity className="h-7 w-7 text-pink-600" />
+                </div>
+                <h3 className="font-bold text-lg mb-2 text-gray-800">Resultados Probados</h3>
+                <p className="text-gray-600">Metodología basada en evidencia y con resultados medibles en el tiempo.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-white to-transparent"></div>
+      </section>
+
+      {/* Wellness Dimensions */}
+      <section className="py-20 px-4 bg-gradient-to-b from-white to-pink-50/50">
+        <div className="container mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Esferas del Bienestar</h2>
+          <p className="text-gray-600 text-center mb-12 max-w-2xl mx-auto">
+            Descubre y desarrolla cada aspecto de tu bienestar integral
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div 
+              className="flex flex-col items-center cursor-pointer transition-all hover:-translate-y-2"
+              onClick={() => router.push(`/specialists?dimension=physical`)}
+            >
+              <div className="mb-4 rounded-full overflow-hidden w-64 h-64 shadow-lg">
+                <Image 
+                  src="/physical.jpg" 
+                  alt="Bienestar Físico"
+                  width={300}
+                  height={300}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <h3 className="text-2xl font-bold mb-2 text-pink-600">Físico</h3>
+              <p className="text-gray-600 text-center max-w-xs">
+                Mejora tu salud física con rutinas personalizadas y seguimiento de hábitos saludables.
+              </p>
+            </div>
+
+            <div 
+              className="flex flex-col items-center cursor-pointer transition-all hover:-translate-y-2"
+              onClick={() => router.push(`/specialists?dimension=mental`)}
+            >
+              <div className="mb-4 rounded-full overflow-hidden w-64 h-64 shadow-lg">
+                <Image 
+                  src="/mental.jpg" 
+                  alt="Bienestar Mental"
+                  width={300}
+                  height={300}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <h3 className="text-2xl font-bold mb-2 text-pink-600">Mental</h3>
+              <p className="text-gray-600 text-center max-w-xs">
+                Desarrolla claridad mental y fortaleza cognitiva con prácticas efectivas.
+              </p>
+            </div>
+
+            <div 
+              className="flex flex-col items-center cursor-pointer transition-all hover:-translate-y-2"
+              onClick={() => router.push(`/specialists?dimension=emotional`)}
+            >
+              <div className="mb-4 rounded-full overflow-hidden w-64 h-64 shadow-lg">
+                <Image 
+                  src="/emotional.jpg" 
+                  alt="Bienestar Emocional"
+                  width={300}
+                  height={300}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <h3 className="text-2xl font-bold mb-2 text-pink-600">Emocional</h3>
+              <p className="text-gray-600 text-center max-w-xs">
+                Cultiva inteligencia emocional y equilibrio en tus relaciones.
+              </p>
+            </div>
+
+            <div 
+              className="flex flex-col items-center cursor-pointer transition-all hover:-translate-y-2"
+              onClick={() => router.push(`/specialists?dimension=spiritual`)}
+            >
+              <div className="mb-4 rounded-full overflow-hidden w-64 h-64 shadow-lg">
+                <Image 
+                  src="/spirit.jpg" 
+                  alt="Bienestar Espiritual"
+                  width={300}
+                  height={300}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <h3 className="text-2xl font-bold mb-2 text-pink-600">Espiritual</h3>
+              <p className="text-gray-600 text-center max-w-xs">
+                Encuentra paz interior y propósito a través de prácticas contemplativas.
+              </p>
+            </div>
+
+            <div 
+              className="flex flex-col items-center cursor-pointer transition-all hover:-translate-y-2"
+              onClick={() => router.push(`/specialists?dimension=financial`)}
+            >
+              <div className="mb-4 rounded-full overflow-hidden w-64 h-64 shadow-lg">
+                <Image 
+                  src="/finances.jpg" 
+                  alt="Bienestar Financiero"
+                  width={300}
+                  height={300}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <h3 className="text-2xl font-bold mb-2 text-pink-600">Financiero</h3>
+              <p className="text-gray-600 text-center max-w-xs">
+                Alcanza estabilidad y libertad financiera con estrategias probadas.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -159,48 +342,6 @@ export default function Component() {
         </div>
       </section>
 
-      {/* Wellness Dimensions */}
-      <section className="py-20 px-4 bg-gradient-to-b from-white to-pink-50/50">
-        <div className="container mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Esferas del Bienestar</h2>
-          <p className="text-gray-600 text-center mb-12 max-w-2xl mx-auto">
-            Descubre y desarrolla cada aspecto de tu bienestar integral
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <WellnessDimension
-              icon={Heart}
-              title="Físico"
-              description="Mejora tu salud física con rutinas personalizadas y seguimiento de hábitos saludables."
-              dimension="physical"
-            />
-            <WellnessDimension
-              icon={Brain}
-              title="Mental"
-              description="Desarrolla claridad mental y fortaleza cognitiva con prácticas efectivas."
-              dimension="mental"
-            />
-            <WellnessDimension
-              icon={Smile}
-              title="Emocional"
-              description="Cultiva inteligencia emocional y equilibrio en tus relaciones."
-              dimension="emotional"
-            />
-            <WellnessDimension
-              icon={Sun}
-              title="Espiritual"
-              description="Encuentra paz interior y propósito a través de prácticas contemplativas."
-              dimension="spiritual"
-            />
-            <WellnessDimension
-              icon={Coins}
-              title="Financiero"
-              description="Alcanza estabilidad y libertad financiera con estrategias probadas."
-              dimension="financial"
-            />
-          </div>
-        </div>
-      </section>
-
       {/* Why Choose Us */}
       <section className="py-20 px-4">
         <div className="container mx-auto">
@@ -223,6 +364,15 @@ export default function Component() {
                 </div>
               </CardHeader>
               <CardContent>
+                <div className="mb-4">
+                  <Image 
+                    src="/global-specialist.png" 
+                    alt="Especialistas globales"
+                    width={250}
+                    height={150}
+                    className="rounded-lg mx-auto"
+                  />
+                </div>
                 <p className="text-gray-600">Accede a una red internacional de expertos en bienestar integral.</p>
               </CardContent>
             </Card>
@@ -235,10 +385,19 @@ export default function Component() {
                   <div className="rounded-full bg-pink-100/50 p-2 group-hover:bg-pink-100 transition-colors">
                     <TestTube className="h-6 w-6 text-pink-500" />
                   </div>
-                  <CardTitle className="text-xl">Test de Autodiagnóstico</CardTitle>
+                  <CardTitle className="text-xl">Test de Bienestar</CardTitle>
                 </div>
               </CardHeader>
               <CardContent>
+                <div className="mb-4">
+                  <Image 
+                    src="/autodiagnostic-test.png" 
+                    alt="Test de autodiagnóstico"
+                    width={250}
+                    height={150}
+                    className="rounded-lg mx-auto"
+                  />
+                </div>
                 <p className="text-gray-600">Descubre qué especialistas se adaptan mejor a tus necesidades específicas.</p>
               </CardContent>
             </Card>
@@ -253,6 +412,15 @@ export default function Component() {
                 </div>
               </CardHeader>
               <CardContent>
+                <div className="mb-4">
+                  <Image 
+                    src="/digital-tracking.png" 
+                    alt="Seguimiento digital"
+                    width={250}
+                    height={150}
+                    className="rounded-lg mx-auto"
+                  />
+                </div>
                 <p className="text-gray-600">Integración con dispositivos wearables para monitorear tu progreso en tiempo real.</p>
               </CardContent>
             </Card>
@@ -270,6 +438,15 @@ export default function Component() {
                 </div>
               </CardHeader>
               <CardContent>
+                <div className="mb-4">
+                  <Image 
+                    src="/community.png" 
+                    alt="Comunidad y aprendizaje"
+                    width={250}
+                    height={150}
+                    className="rounded-lg mx-auto"
+                  />
+                </div>
                 <p className="text-gray-600">Únete a una comunidad motivadora y accede a recursos actualizados sobre bienestar integral.</p>
               </CardContent>
             </Card>
@@ -297,9 +474,30 @@ export default function Component() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gradient-to-b from-white to-pink-50 py-8 text-center text-gray-600">
+      <footer className="bg-gradient-to-b from-white to-pink-50 py-8 text-center text-gray-600">      
         <div className="container mx-auto px-4">
-          <p>© 2024 IntegralmenteBien by Vanessa Yataco. Todos los derechos reservados.</p>
+          {/* Social Media Icons */}
+          <div className="flex justify-center gap-6 mb-6">
+            <Link href="https://www.instagram.com/integralmentebien/" target="_blank" rel="noopener noreferrer" 
+              className="rounded-full bg-pink-50 p-2 hover:bg-pink-100 transition-colors">
+              <Facebook className="h-5 w-5 text-pink-500" />
+            </Link>
+            <Link href="https://www.instagram.com/integralmentebien/" target="_blank" rel="noopener noreferrer"
+              className="rounded-full bg-pink-50 p-2 hover:bg-pink-100 transition-colors">
+              <Instagram className="h-5 w-5 text-pink-500" />
+            </Link>
+            <Link href="https://www.linkedin.com/in/vanessa-yataco-casas/" target="_blank" rel="noopener noreferrer"
+              className="rounded-full bg-pink-50 p-2 hover:bg-pink-100 transition-colors">
+              <Linkedin className="h-5 w-5 text-pink-500" />
+            </Link>
+            <Link href="https://open.spotify.com/show/3vcymFCSOzbqHMRfQbwg0h?si=fOQq2NwFTa2I1-UHryZzpg" target="_blank" rel="noopener noreferrer"
+              className="rounded-full bg-pink-50 p-2 hover:bg-pink-100 transition-colors">
+              <Music className="h-5 w-5 text-pink-500" />
+            </Link>
+          </div>
+          
+          {/* Copyright */}
+          <p>© {new Date().getFullYear()} IntegralmenteBien by Vanessa Yataco. Todos los derechos reservados.</p>
         </div>
       </footer>
     </div>

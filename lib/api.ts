@@ -381,3 +381,25 @@ export async function submitAnswers(
     }, 1000);
   });
 }
+
+// Define user data interface
+interface UserData {
+  firstName: string;
+  lastName: string;
+  email: string;
+  country: string;
+  phone: string;
+}
+
+// Function to register user
+export async function registerUser(userData: UserData): Promise<void> {
+  // Simulate API call to register user
+  return new Promise((resolve) => {
+    console.log('Registering user:', userData);
+    // Simulate network delay
+    setTimeout(() => {
+      // In a real app, this would be an API call to your backend
+      resolve();
+    }, 1500);
+  });
+}

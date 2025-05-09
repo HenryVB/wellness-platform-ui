@@ -1,9 +1,12 @@
 // components/test/Roadmap.tsx
 import { useTest } from '@/contexts/TestContext';
 import { WellnessDimension } from '@/types/test';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, Mail, Share2, Copy, Download, CheckCircle } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { Button } from '../ui/button';
+import { useState } from 'react';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const dimensionColors: Record<WellnessDimension, { bg: string; text: string; icon: string }> = {
   physical: { bg: 'bg-blue-50', text: 'text-blue-600', icon: 'border-blue-200' },
@@ -17,6 +20,53 @@ export function Roadmap() {
   const router = useRouter();
   const { state } = useTest();
   const result = state.result;
+  const [copied, setCopied] = useState(false);
+  const [emailSent, setEmailSent] = useState(false);
+
+  // Función para simular envío de correo
+  const handleEmailShare = async () => {
+    setEmailSent(true);
+    toast.success("¡Resultados enviados a tu correo electrónico!", {
+      position: "bottom-center",
+      autoClose: 3000
+    });
+    
+    // Simular tiempo de proceso
+    setTimeout(() => {
+      setEmailSent(false);
+    }, 3000);
+  };
+
+  // Función para copiar link de resultados
+  const handleCopyLink = () => {
+    // En una implementación real, esto generaría un link compartible único
+    const shareableLink = `https://integralmentebien.com/test/results/${Math.random().toString(36).substring(2, 10)}`;
+    navigator.clipboard.writeText(shareableLink);
+    setCopied(true);
+    toast.info("¡Enlace copiado al portapapeles!", {
+      position: "bottom-center",
+      autoClose: 3000
+    });
+    
+    setTimeout(() => {
+      setCopied(false);
+    }, 3000);
+  };
+
+  // Función para simular descarga del PDF
+  const handleDownload = () => {
+    toast.success("Descargando resultados en PDF...", {
+      position: "bottom-center",
+      autoClose: 3000
+    });
+    
+    // En una implementación real, aquí se generaría y descargaría el PDF
+    setTimeout(() => {
+      toast.info("PDF descargado correctamente", {
+        position: "bottom-center"
+      });
+    }, 2000);
+  };
 
   if (!result) return null;
 
@@ -64,6 +114,59 @@ export function Roadmap() {
           </div>
         ))}
       </div>
+      
+      {/* Share Results Section */}
+      <div className="bg-white p-6 rounded-xl shadow-sm border hover:shadow-md transition-shadow max-w-3xl mx-auto">
+        <h3 className="text-xl font-semibold mb-4 text-center text-pink-600">Comparte tus resultados</h3>
+        <div className="flex flex-wrap gap-3 justify-center">
+          <Button 
+            onClick={handleEmailShare}
+            disabled={emailSent}
+            variant="outline"
+            className="flex items-center gap-2 bg-white border-pink-300 hover:bg-pink-50 text-gray-700"
+          >
+            {emailSent ? (
+              <>
+                <CheckCircle className="h-4 w-4 text-green-500" />
+                <span>Enviado</span>
+              </>
+            ) : (
+              <>
+                <Mail className="h-4 w-4 text-pink-500" />
+                <span>Enviar a mi correo</span>
+              </>
+            )}
+          </Button>
+          
+          <Button 
+            onClick={handleCopyLink}
+            variant="outline"
+            className="flex items-center gap-2 bg-white border-pink-300 hover:bg-pink-50 text-gray-700"
+          >
+            {copied ? (
+              <>
+                <CheckCircle className="h-4 w-4 text-green-500" />
+                <span>Copiado</span>
+              </>
+            ) : (
+              <>
+                <Copy className="h-4 w-4 text-pink-500" />
+                <span>Copiar enlace</span>
+              </>
+            )}
+          </Button>
+
+          <Button 
+            onClick={handleDownload}
+            variant="outline"
+            className="flex items-center gap-2 bg-white border-pink-300 hover:bg-pink-50 text-gray-700"
+          >
+            <Download className="h-4 w-4 text-pink-500" />
+            <span>Descargar PDF</span>
+          </Button>
+         
+        </div>
+      </div>
 
       {/* Back Button */}
       <div className="text-center pt-8">
@@ -77,6 +180,9 @@ export function Roadmap() {
           <ArrowLeft className="ml-2 h-5 w-5" />
         </Button>
       </div>
+      
+      {/* Toast container for notifications */}
+      <ToastContainer position="bottom-center" theme="colored" />
     </div>
   );
 }
