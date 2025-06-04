@@ -9,7 +9,7 @@ import { Progress } from '@/components/test/Progress';
 import { Roadmap } from '@/components/test/Roadmap';
 import { Button } from '@/components/ui/button';
 import { fetchQuestions, submitAnswers, registerUser } from '@/lib/api';
-import { Question as QuestionType, TestResult } from '@/types/test';
+import { Question as QuestionType} from '@/types/test';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';

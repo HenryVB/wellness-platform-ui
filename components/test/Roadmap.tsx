@@ -1,7 +1,7 @@
 // components/test/Roadmap.tsx
 import { useTest } from '@/contexts/TestContext';
 import { WellnessDimension } from '@/types/test';
-import { ArrowLeft, Mail, Share2, Copy, Download, CheckCircle } from 'lucide-react';
+import { ArrowLeft, Mail, Copy, Download, CheckCircle } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { Button } from '../ui/button';
 import { useState } from 'react';

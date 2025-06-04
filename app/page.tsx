@@ -2,12 +2,7 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { 
-  Heart, 
-  Brain, 
-  Smile, 
-  Sun, 
-  Coins, 
+import {  
   Users, 
   Activity, 
   TestTube, 
@@ -28,37 +23,6 @@ import {
 import Image from "next/image"
 import Link from "next/link"
 import { useRouter } from 'next/navigation'
-
-interface WellnessDimensionProps {
-  icon: React.ElementType;
-  title: string;
-  description: string;
-  dimension: string;
-}
-
-const WellnessDimension = ({ icon: Icon, title, description, dimension }: WellnessDimensionProps) => {
-  const router = useRouter();
-  const dimensionKey = dimension.toLowerCase();
-  
-  return (
-    <Card 
-      className="group h-full transition-all hover:shadow-lg hover:border-pink-200 cursor-pointer"
-      onClick={() => router.push(`/specialists?dimension=${dimensionKey}`)}
-    >
-      <CardHeader>
-        <div className="flex items-center gap-3">
-          <div className="rounded-full bg-pink-50 p-2 group-hover:bg-pink-100 transition-colors">
-            <Icon className="h-6 w-6 text-pink-500" />
-          </div>
-          <CardTitle className="text-xl">{title}</CardTitle>
-        </div>
-      </CardHeader>
-      <CardContent>
-        <CardDescription className="text-base">{description}</CardDescription>
-      </CardContent>
-    </Card>
-  );
-};
 
 interface SpecialistCardProps {
   icon: React.ElementType;
