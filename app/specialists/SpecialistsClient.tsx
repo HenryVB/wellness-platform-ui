@@ -11,6 +11,7 @@ import { Star, Calendar } from 'lucide-react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import { FilterPanel } from '@/components/specialists/FilterPanel'
 import { DateRange } from 'react-day-picker'
+import Image from 'next/image'
 
 export default function SpecialistsClient() {
   const searchParams = useSearchParams()
@@ -118,7 +119,7 @@ export default function SpecialistsClient() {
             <Card key={specialist.id} className="hover:shadow-lg transition-shadow">
               <CardHeader>
                 <div className="relative w-full h-48">
-                  <img
+                  <Image
                     src={specialist.image}
                     alt={specialist.name}
                     className="object-cover rounded-lg w-full h-full"
