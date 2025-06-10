@@ -9,8 +9,8 @@ export default function CommunityPage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-20 lg:py-32 bg-gradient-to-b from-pink-50/80 to-white overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-pink-100/50 via-transparent to-transparent" />
+      <section className="relative py-20 lg:py-32 bg-gradient-to-b from-orange-50/80 to-white overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-orange-100/50 via-transparent to-transparent" />
         <div className="container px-4 mx-auto relative">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Image Column */}
@@ -26,7 +26,7 @@ export default function CommunityPage() {
 
             {/* Content Column */}
             <div className="text-center lg:text-left">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-pink-600 to-pink-500 bg-clip-text text-transparent">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-orange-600 to-orange-500 bg-clip-text text-transparent">
                 Únete a nuestra comunidad
               </h1>
               <p className="text-xl text-gray-600 mb-10">
@@ -35,7 +35,7 @@ export default function CommunityPage() {
               </p>
               <Button 
                 size="lg" 
-                className="bg-pink-600 hover:bg-pink-700 text-white px-8 py-6 text-lg rounded-full transition-all hover:shadow-lg hover:-translate-y-0.5"
+                className="bg-orange-600 hover:bg-orange-700 text-white px-8 py-6 text-lg rounded-full transition-all hover:shadow-lg hover:-translate-y-0.5"
               >
                 Unirme ahora
                 <ArrowRight className="ml-2 h-5 w-5" />

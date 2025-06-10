@@ -13,14 +13,14 @@ export function Progress() {
         <span className="text-sm font-medium text-gray-600">
           Pregunta {currentQuestion} de {totalQuestions}
         </span>
-        <span className="text-sm font-medium text-pink-600">
+        <span className="text-sm font-medium text-orange-600">
           {Math.round(progress)}% Completado
         </span>
       </div>
 
-      <div className="h-2 bg-pink-100 rounded-full overflow-hidden">
+      <div className="h-2 bg-orange-100 rounded-full overflow-hidden">
         <div 
-          className="h-full bg-gradient-to-r from-pink-500 to-pink-600 transition-all duration-300 ease-in-out"
+          className="h-full bg-gradient-to-r from-orange-500 to-orange-600 transition-all duration-300 ease-in-out"
           style={{ width: `${progress}%` }}
         />
       </div>
@@ -31,10 +31,10 @@ export function Progress() {
             key={index}
             className={`w-2.5 h-2.5 rounded-full transition-colors duration-200 ${
               index < currentQuestion
-                ? 'bg-pink-600'
+                ? 'bg-orange-600'
                 : index === currentQuestion - 1
-                ? 'bg-pink-400 animate-pulse'
-                : 'bg-pink-100'
+                ? 'bg-orange-400 animate-pulse'
+                : 'bg-orange-100'
             }`}
           />
         ))}

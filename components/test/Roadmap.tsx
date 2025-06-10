@@ -9,11 +9,11 @@ import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const dimensionColors: Record<WellnessDimension, { bg: string; text: string; icon: string }> = {
-  physical: { bg: 'bg-blue-50', text: 'text-blue-600', icon: 'border-blue-200' },
+  physical: { bg: 'bg-green-50', text: 'text-green-600', icon: 'border-green-200' },
   mental: { bg: 'bg-purple-50', text: 'text-purple-600', icon: 'border-purple-200' },
-  emotional: { bg: 'bg-pink-50', text: 'text-pink-600', icon: 'border-pink-200' },
-  spiritual: { bg: 'bg-amber-50', text: 'text-amber-600', icon: 'border-amber-200' },
-  financial: { bg: 'bg-green-50', text: 'text-green-600', icon: 'border-green-200' }
+  emotional: { bg: 'bg-yellow-50', text: 'text-yellow-600', icon: 'border-yellow-200' },
+  spiritual: { bg: 'bg-blue-50', text: 'text-blue-600', icon: 'border-blue-200' },
+  financial: { bg: 'bg-orange-50', text: 'text-orange-600', icon: 'border-orange-200' }
 };
 
 export function Roadmap() {
@@ -73,7 +73,7 @@ export function Roadmap() {
   return (
     <div className="py-12 space-y-8">
       <div className="text-center space-y-4">
-        <h2 className="text-4xl font-bold bg-gradient-to-r from-pink-600 to-pink-500 bg-clip-text text-transparent">
+        <h2 className="text-4xl font-bold bg-gradient-to-r from-orange-600 to-orange-500 bg-clip-text text-transparent">
           ¡Estamos listos para ayudarte a descubrir y alcanzar tu mejor versión!
         </h2>
         <p className="text-gray-600">Basado en tus respuestas, hemos creado un plan personalizado para ti</p>
@@ -92,7 +92,7 @@ export function Roadmap() {
 
       {/* Timeline */}
       <div className="space-y-8 relative before:absolute before:inset-0 before:ml-6 before:w-0.5 
-        before:bg-gradient-to-b before:from-pink-100 before:via-pink-300 before:to-pink-100">
+        before:bg-gradient-to-b before:from-orange-100 before:via-orange-300 before:to-orange-100">
         {result.roadmap.map((step, index) => (
           <div key={index} className="relative pl-14">
             <div className={`absolute left-0 p-3 rounded-full ${dimensionColors[step.dimension].bg} 
@@ -105,7 +105,7 @@ export function Roadmap() {
               <ul className="space-y-2">
                 {step.actionItems.map((item, itemIndex) => (
                   <li key={itemIndex} className="flex items-start gap-2 text-gray-700">
-                    <span className="text-pink-500">•</span>
+                    <span className="text-orange-500">•</span>
                     <span>{item}</span>
                   </li>
                 ))}
@@ -117,13 +117,13 @@ export function Roadmap() {
       
       {/* Share Results Section */}
       <div className="bg-white p-6 rounded-xl shadow-sm border hover:shadow-md transition-shadow max-w-3xl mx-auto">
-        <h3 className="text-xl font-semibold mb-4 text-center text-pink-600">Comparte tus resultados</h3>
+        <h3 className="text-xl font-semibold mb-4 text-center text-orange-600">Comparte tus resultados</h3>
         <div className="flex flex-wrap gap-3 justify-center">
           <Button 
             onClick={handleEmailShare}
             disabled={emailSent}
             variant="outline"
-            className="flex items-center gap-2 bg-white border-pink-300 hover:bg-pink-50 text-gray-700"
+            className="flex items-center gap-2 bg-white border-orange-300 hover:bg-orange-50 text-gray-700"
           >
             {emailSent ? (
               <>
@@ -132,7 +132,7 @@ export function Roadmap() {
               </>
             ) : (
               <>
-                <Mail className="h-4 w-4 text-pink-500" />
+                <Mail className="h-4 w-4 text-orange-500" />
                 <span>Enviar a mi correo</span>
               </>
             )}
@@ -141,7 +141,7 @@ export function Roadmap() {
           <Button 
             onClick={handleCopyLink}
             variant="outline"
-            className="flex items-center gap-2 bg-white border-pink-300 hover:bg-pink-50 text-gray-700"
+            className="flex items-center gap-2 bg-white border-orange-300 hover:bg-orange-50 text-gray-700"
           >
             {copied ? (
               <>
@@ -150,7 +150,7 @@ export function Roadmap() {
               </>
             ) : (
               <>
-                <Copy className="h-4 w-4 text-pink-500" />
+                <Copy className="h-4 w-4 text-orange-500" />
                 <span>Copiar enlace</span>
               </>
             )}
@@ -159,9 +159,9 @@ export function Roadmap() {
           <Button 
             onClick={handleDownload}
             variant="outline"
-            className="flex items-center gap-2 bg-white border-pink-300 hover:bg-pink-50 text-gray-700"
+            className="flex items-center gap-2 bg-white border-orange-300 hover:bg-orange-50 text-gray-700"
           >
-            <Download className="h-4 w-4 text-pink-500" />
+            <Download className="h-4 w-4 text-orange-500" />
             <span>Descargar PDF</span>
           </Button>
          
@@ -173,7 +173,7 @@ export function Roadmap() {
         <Button 
           onClick={() => router.push('/')}
           size="lg"
-          className="bg-pink-600 hover:bg-pink-700 text-white px-8 py-6 text-lg rounded-full 
+          className="bg-orange-600 hover:bg-orange-700 text-white px-8 py-6 text-lg rounded-full 
             transition-all hover:shadow-lg hover:-translate-y-0.5"
         >
           Volver al Inicio

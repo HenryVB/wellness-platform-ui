@@ -105,7 +105,7 @@ function UserRegistrationForm({ onSubmit, isLoading }: {
 
   return (
     <div className="w-full max-w-md mx-auto bg-white rounded-xl shadow-md p-8 mt-8">
-      <h2 className="text-2xl font-bold text-center text-pink-600 mb-6">¡Test completado!</h2>
+      <h2 className="text-2xl font-bold text-center text-orange-600 mb-6">¡Test completado!</h2>
       <p className="text-gray-600 mb-6 text-center">
         Para ver tus resultados personalizados, por favor ingresa tus datos:
       </p>
@@ -182,7 +182,7 @@ function UserRegistrationForm({ onSubmit, isLoading }: {
         
         <Button 
           type="submit" 
-          className="w-full bg-pink-600 hover:bg-pink-700"
+          className="w-full bg-orange-600 hover:bg-orange-700"
           disabled={isLoading}
         >
           {isLoading ? 
@@ -287,7 +287,7 @@ export default function TestPage() {
   if (isLoading) return (
     <div className="min-h-screen flex items-center justify-center">
       <div className="text-center space-y-4">
-        <div className="w-16 h-16 border-4 border-pink-600/20 border-t-pink-600 rounded-full animate-spin mx-auto"/>
+        <div className="w-16 h-16 border-4 border-orange-600/20 border-t-orange-600 rounded-full animate-spin mx-auto"/>
         <p className="text-gray-600">Cargando test...</p>
       </div>
     </div>
@@ -295,7 +295,7 @@ export default function TestPage() {
 
   return (
     <TestProvider initialQuestions={questions}>
-      <div className="min-h-screen bg-gradient-to-b from-pink-50/80 to-white">
+      <div className="min-h-screen bg-gradient-to-b from-orange-50/80 to-white">
         <div className="container mx-auto px-4 py-12 max-w-3xl">
           <TestContent />
         </div>

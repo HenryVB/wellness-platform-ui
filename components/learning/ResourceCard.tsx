@@ -10,7 +10,7 @@ export function ResourceCard({ resource }: { resource: LearningResource }) {
     const commonContent = (
       <div className="mb-4">
         <div className="flex items-center gap-2 mb-3">
-          <Badge variant="outline" className="capitalize bg-pink-50 text-pink-600 border-pink-200">
+          <Badge variant="outline" className="capitalize bg-orange-50 text-orange-600 border-orange-200">
             {resource.dimension}
           </Badge>
         </div>
@@ -58,7 +58,7 @@ export function ResourceCard({ resource }: { resource: LearningResource }) {
   };
 
   return (
-    <Card className="group h-full bg-gradient-to-br from-pink-50/50 to-white hover:shadow-lg transition-all hover:border-pink-200 hover:-translate-y-1">
+    <Card className="group h-full bg-gradient-to-br from-orange-50/50 to-white hover:shadow-lg transition-all hover:border-orange-200 hover:-translate-y-1">
       <CardHeader>
         <Image
           src={resource.image}
@@ -72,7 +72,7 @@ export function ResourceCard({ resource }: { resource: LearningResource }) {
         {renderContent()}
       </CardContent>
       <CardFooter>
-        <Button className="w-full bg-pink-600 hover:bg-pink-700 text-white transition-all hover:shadow-md">
+        <Button className="w-full bg-orange-600 hover:bg-orange-700 text-white transition-all hover:shadow-md">
           Ver detalle
         </Button>
       </CardFooter>

@@ -30,7 +30,7 @@ export function Question() {
 
   return (
     <div className="space-y-8 bg-white rounded-xl p-8 shadow-sm border">
-      <h2 className="text-2xl font-bold bg-gradient-to-r from-pink-600 to-pink-500 bg-clip-text text-transparent">
+      <h2 className="text-2xl font-bold bg-gradient-to-r from-orange-600 to-orange-500 bg-clip-text text-transparent">
         {question.text}
       </h2>
       
@@ -42,7 +42,7 @@ export function Question() {
         >
           {question.options.map(option => (
             <div key={option.id} 
-              className="flex items-center space-x-3 p-4 rounded-lg border border-gray-200 hover:border-pink-200 transition-colors">
+              className="flex items-center space-x-3 p-4 rounded-lg border border-gray-200 hover:border-orange-200 transition-colors">
               <RadioGroupItem value={option.id} id={option.id} />
               <label htmlFor={option.id} className="flex-grow cursor-pointer">{option.text}</label>
             </div>
@@ -52,7 +52,7 @@ export function Question() {
         <div className="space-y-4">
           {question.options.map(option => (
             <div key={option.id} 
-              className="flex items-center space-x-3 p-4 rounded-lg border border-gray-200 hover:border-pink-200 transition-colors">
+              className="flex items-center space-x-3 p-4 rounded-lg border border-gray-200 hover:border-orange-200 transition-colors">
               <Checkbox id={option.id}
                 checked={state.answers[question.id]?.includes(option.id)}
                 onCheckedChange={(checked) => handleMultiSelect(option.id, checked as boolean)}

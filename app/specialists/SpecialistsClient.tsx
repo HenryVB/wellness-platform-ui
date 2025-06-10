@@ -110,7 +110,7 @@ export default function SpecialistsClient() {
 
         {loading && (
           <div className="text-center py-8">
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-pink-500 mx-auto"/>
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-orange-500 mx-auto"/>
           </div>
         )}
 
@@ -126,7 +126,7 @@ export default function SpecialistsClient() {
                   />
                 </div>
                 <h3 className="text-xl font-semibold mt-4">{specialist.name}</h3>
-                <span className="text-sm text-pink-600 font-medium">
+                <span className="text-sm text-orange-600 font-medium">
                   {specialist.dimension.charAt(0).toUpperCase() + 
                     specialist.dimension.slice(1)}
                 </span>
