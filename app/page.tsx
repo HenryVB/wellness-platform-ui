@@ -14,15 +14,23 @@ import {
   CircuitBoard, 
   Flame,
   GraduationCap,
-  ArrowRight,
-  Facebook,
-  Instagram,
-  Linkedin,
-  Music
+  ArrowRight
 } from "lucide-react"
+import { FaFacebookF, FaInstagram, FaLinkedinIn, FaSpotify, FaCheck } from "react-icons/fa";
 import Image from "next/image"
 import Link from "next/link"
 import { useRouter } from 'next/navigation'
+import { useState } from "react";
+
+// Función para mostrar marca de verificación
+const checkmark = (checked: boolean) => {
+  if (checked) {
+    return <div className="mx-auto w-4 h-4 rounded-full bg-pink-500 flex items-center justify-center">
+      <FaCheck className="text-white text-xs" />
+    </div>;
+  }
+  return null;
+};
 
 interface SpecialistCardProps {
   icon: React.ElementType;
@@ -46,9 +54,69 @@ const SpecialistCard = ({ icon: Icon, title, description }: SpecialistCardProps)
   </Card>
 )
 
+const specialistsData = [
+  {
+    name: 'Nutricionistas',
+    physical: true,
+    mental: false,
+    emotional: true,
+    spiritual: false,
+    financial: false,
+  },
+  {
+    name: 'Coach Deportivo',
+    physical: true,
+    mental: false,
+    emotional: false,
+    spiritual: false,
+    financial: false,
+  },
+  {
+    name: 'Coach Ontológico',
+    physical: false,
+    mental: true,
+    emotional: true,
+    spiritual: false,
+    financial: false,
+  },
+  {
+    name: 'Psicólogos',
+    physical: false,
+    mental: true,
+    emotional: true,
+    spiritual: false,
+    financial: false,
+  },
+  {
+    name: 'Coach Financiero',
+    physical: false,
+    mental: false,
+    emotional: false,
+    spiritual: false,
+    financial: true,
+  },
+  {
+    name: 'Coach TDAH',
+    physical: false,
+    mental: true,
+    emotional: false,
+    spiritual: false,
+    financial: false,
+  },
+  {
+    name: 'Coach Espiritual',
+    physical: false,
+    mental: false,
+    emotional: true,
+    spiritual: true,
+    financial: false,
+  },
+];
+
 export default function Component() {
   const router = useRouter();
-
+  const [formUrl] = useState("https://forms.gle/your-form-id-here"); // Reemplaza con la URL de tu Google Form
+  
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -113,7 +181,7 @@ export default function Component() {
                 { 
                 <iframe 
                   className="absolute inset-0 w-full h-full"
-                  src="https://www.youtube.com/embed/RgsyzjlQwCQ?si=3UaqXXioOU8oTsTn" 
+                  src="https://www.youtube.com/embed/Xl6xwXB-dzE?si=JTTUnoj9RlAPSyFK" 
                   title="IntegralmenteBien: Bienestar Integral"
                   frameBorder="0" 
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
@@ -259,49 +327,45 @@ export default function Component() {
         </div>
       </section>
 
-      {/* Specialists Section */}
+      {/* Specialists Section with Enhanced Table */}
       <section id="specialists" className="py-20 px-4">
         <div className="container mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Nuestros Especialistas</h2>
           <p className="text-gray-600 text-center mb-12 max-w-2xl mx-auto">
             Conecta con expertos certificados que te guiarán en tu camino hacia el bienestar integral
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            <SpecialistCard
-              icon={Apple}
-              title="Nutricionistas"
-              description="Expertos en alimentación saludable y planes nutricionales personalizados."
-            />
-            <SpecialistCard
-              icon={Dumbbell}
-              title="Coach Deportivo"
-              description="Profesionales en entrenamiento físico y desarrollo de rutinas de ejercicio."
-            />
-            <SpecialistCard
-              icon={Lightbulb}
-              title="Coach Ontológico"
-              description="Especialistas en desarrollo personal y transformación del ser."
-            />
-            <SpecialistCard
-              icon={Stethoscope}
-              title="Psicólogos"
-              description="Profesionales de la salud mental y bienestar emocional."
-            />
-            <SpecialistCard
-              icon={PiggyBank}
-              title="Coach Financiero"
-              description="Expertos en gestión financiera y desarrollo de patrimonio."
-            />
-            <SpecialistCard
-              icon={CircuitBoard}
-              title="Coach TDAH"
-              description="Especialistas en apoyo y estrategias para personas con TDAH."
-            />
-            <SpecialistCard
-              icon={Flame}
-              title="Coach Espiritual"
-              description="Guías en el desarrollo espiritual y crecimiento interior."
-            />
+          
+          <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+            <div className="overflow-x-auto">
+              <table className="w-full border-collapse">
+                <thead>
+                  <tr>
+                    <th className="border-b-2 border-pink-200 bg-gradient-to-r from-pink-50 to-white p-4 text-left font-semibold text-gray-700">
+                      Especialista
+                    </th>
+                    {['Físico', 'Mental', 'Emocional', 'Espiritual', 'Financiera'].map((dimension) => (
+                      <th key={dimension} className="border-b-2 border-pink-200 bg-gradient-to-r from-pink-50 to-white p-4 text-center font-semibold text-gray-700">
+                        {dimension}
+                      </th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {specialistsData.map((specialist, index) => (
+                    <tr key={specialist.name} className={`hover:bg-pink-50/50 transition-colors ${index % 2 === 0 ? 'bg-white' : 'bg-pink-50/20'}`}>
+                      <td className="border-b border-pink-200/70 p-4">{specialist.name}</td>
+                      {(["physical", "mental", "emotional", "spiritual", "financial"] as const).map((dim) => (
+                        <td key={`${specialist.name}-${dim}`} className="border-b border-pink-200/70 p-4 text-center">
+                          {specialist[dim] && <div className="mx-auto w-5 h-5 rounded-full bg-pink-500 flex items-center justify-center">
+                            <FaCheck className="text-white text-xs" />
+                          </div>}
+                        </td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </section>
@@ -437,6 +501,20 @@ export default function Component() {
         </div>
       </section>
 
+
+      {/* Floating Waitlist Container */}
+      <div className="fixed bottom-8 left-1/2 transform -translate-x-1/2 z-50 bg-white/90 backdrop-blur-sm rounded-full shadow-xl border border-pink-100 flex items-center justify-between px-6 py-4 w-11/12 max-w-3xl">
+        <div className="font-medium text-gray-700">
+          Únete a la lista de espera
+        </div>
+        <Button 
+          className="bg-pink-600 hover:bg-pink-700 text-white px-6 py-2 rounded-full transition-all hover:shadow-md"
+          onClick={() => window.open(formUrl, '_blank')}
+        >
+          Lista de espera
+        </Button>
+      </div>
+
       {/* Footer */}
       <footer className="bg-gradient-to-b from-white to-pink-50 py-8 text-center text-gray-600">      
         <div className="container mx-auto px-4">
@@ -444,19 +522,19 @@ export default function Component() {
           <div className="flex justify-center gap-6 mb-6">
             <Link href="https://www.instagram.com/integralmentebien/" target="_blank" rel="noopener noreferrer" 
               className="rounded-full bg-pink-50 p-2 hover:bg-pink-100 transition-colors">
-              <Facebook className="h-5 w-5 text-pink-500" />
+              <FaFacebookF className="h-5 w-5 text-pink-500" />
             </Link>
             <Link href="https://www.instagram.com/integralmentebien/" target="_blank" rel="noopener noreferrer"
               className="rounded-full bg-pink-50 p-2 hover:bg-pink-100 transition-colors">
-              <Instagram className="h-5 w-5 text-pink-500" />
+              <FaInstagram className="h-5 w-5 text-pink-500" />
             </Link>
             <Link href="https://www.linkedin.com/in/vanessa-yataco-casas/" target="_blank" rel="noopener noreferrer"
               className="rounded-full bg-pink-50 p-2 hover:bg-pink-100 transition-colors">
-              <Linkedin className="h-5 w-5 text-pink-500" />
+              <FaLinkedinIn className="h-5 w-5 text-pink-500" />
             </Link>
             <Link href="https://open.spotify.com/show/3vcymFCSOzbqHMRfQbwg0h?si=fOQq2NwFTa2I1-UHryZzpg" target="_blank" rel="noopener noreferrer"
               className="rounded-full bg-pink-50 p-2 hover:bg-pink-100 transition-colors">
-              <Music className="h-5 w-5 text-pink-500" />
+              <FaSpotify className="h-5 w-5 text-pink-500" />
             </Link>
           </div>
           
