@@ -1,6 +1,6 @@
 "use client"
 
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import {  
   Users, 
@@ -17,11 +17,7 @@ import { useRouter } from 'next/navigation'
 import { useState } from "react";
 
 
-interface SpecialistCardProps {
-  icon: React.ElementType;
-  title: string;
-  description: string;
-}
+
 
 
 const specialistsData = [
