@@ -16,15 +16,6 @@ import Link from "next/link"
 import { useRouter } from 'next/navigation'
 import { useState } from "react";
 
-// Función para mostrar marca de verificación
-const checkmark = (checked: boolean) => {
-  if (checked) {
-    return <div className="mx-auto w-4 h-4 rounded-full bg-orange-500 flex items-center justify-center">
-      <FaCheck className="text-white text-xs" />
-    </div>;
-  }
-  return null;
-};
 
 interface SpecialistCardProps {
   icon: React.ElementType;
@@ -32,21 +23,6 @@ interface SpecialistCardProps {
   description: string;
 }
 
-const SpecialistCard = ({ icon: Icon, title, description }: SpecialistCardProps) => (
-  <Card className="group h-full transition-all hover:shadow-lg hover:-translate-y-1">
-    <CardHeader>
-      <div className="flex items-center gap-3">
-        <div className="rounded-full bg-orange-50 p-2 group-hover:bg-orange-100 transition-colors">
-          <Icon className="h-6 w-6 text-orange-500" />
-        </div>
-        <CardTitle className="text-xl">{title}</CardTitle>
-      </div>
-    </CardHeader>
-    <CardContent>
-      <CardDescription className="text-base">{description}</CardDescription>
-    </CardContent>
-  </Card>
-)
 
 const specialistsData = [
   {
