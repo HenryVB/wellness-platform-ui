@@ -107,7 +107,7 @@ function UserRegistrationForm({ onSubmit, isLoading }: {
     <div className="w-full max-w-md mx-auto bg-white rounded-xl shadow-md p-8 mt-8">
       <h2 className="text-2xl font-bold text-center text-orange-600 mb-6">¡Test completado!</h2>
       <p className="text-gray-600 mb-6 text-center">
-        Para ver tus resultados personalizados, por favor ingresa tus datos:
+        Ingresa tus datos para conocer tu ruta del bienestar:
       </p>
       
       <form onSubmit={handleSubmit} className="space-y-4">
@@ -190,7 +190,7 @@ function UserRegistrationForm({ onSubmit, isLoading }: {
               <div className="w-5 h-5 border-2 border-white/20 border-t-white rounded-full animate-spin mr-2"></div>
               Procesando...
             </div> : 
-            "Ver mis resultados"
+            "Ver mi ruta del bienestar"
           }
         </Button>
       </form>

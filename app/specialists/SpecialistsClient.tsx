@@ -122,6 +122,8 @@ export default function SpecialistsClient() {
                   <Image
                     src={specialist.image}
                     alt={specialist.name}
+                    width={400}
+                    height={300}
                     className="object-cover rounded-lg w-full h-full"
                   />
                 </div>

@@ -74,9 +74,9 @@ export function Roadmap() {
     <div className="py-12 space-y-8">
       <div className="text-center space-y-4">
         <h2 className="text-4xl font-bold bg-gradient-to-r from-orange-600 to-orange-500 bg-clip-text text-transparent">
-          ¡Estamos listos para ayudarte a descubrir y alcanzar tu mejor versión!
+          ¡Estamos listos para guiarte en el viaje de volver a ti conectando cuerpo, mente y alma!
         </h2>
-        <p className="text-gray-600">Basado en tus respuestas, hemos creado un plan personalizado para ti</p>
+        <p className="text-gray-600">Basado en tus respuestas, te propones esta ruta del bienestar</p>
       </div>
 
       {/* Dimensions Tags */}
@@ -138,23 +138,6 @@ export function Roadmap() {
             )}
           </Button>
           
-          <Button 
-            onClick={handleCopyLink}
-            variant="outline"
-            className="flex items-center gap-2 bg-white border-orange-300 hover:bg-orange-50 text-gray-700"
-          >
-            {copied ? (
-              <>
-                <CheckCircle className="h-4 w-4 text-green-500" />
-                <span>Copiado</span>
-              </>
-            ) : (
-              <>
-                <Copy className="h-4 w-4 text-orange-500" />
-                <span>Copiar enlace</span>
-              </>
-            )}
-          </Button>
 
           <Button 
             onClick={handleDownload}

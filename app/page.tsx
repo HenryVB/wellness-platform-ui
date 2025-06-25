@@ -81,7 +81,46 @@ const specialistsData = [
 
 export default function Component() {
   const router = useRouter();
-  const [formUrl] = useState("https://forms.gle/o4yuLBft7DfPX2ak9"); // Reemplaza con la URL de tu Google Form
+  const formUrl = "https://forms.gle/o4yuLBft7DfPX2ak9"; // URL de tu Google Form
+  
+  // Definir las dimensiones de bienestar para uso dinámico
+  const wellnessDimensions = [
+    { 
+      id: "physical", 
+      name: "Físico", 
+      description: "Optimiza tu salud física a través de nutrición, ejercicio y hábitos saludables.",
+      imagePath: "/physical.jpg" 
+    },
+    { 
+      id: "mental", 
+      name: "Mental", 
+      description: "Fortalece tu mente con técnicas de concentración y claridad mental.",
+      imagePath: "/mental.jpg" 
+    },
+    { 
+      id: "emotional", 
+      name: "Emocional", 
+      description: "Desarrolla inteligencia emocional y estrategias para gestionar tus emociones.",
+      imagePath: "/emotional.jpg" 
+    },
+    { 
+      id: "spiritual", 
+      name: "Espiritual", 
+      description: "Encuentra paz interior y propósito a través de prácticas contemplativas.",
+      imagePath: "/spirit.jpg" 
+    },
+    { 
+      id: "financial", 
+      name: "Financiero", 
+      description: "Alcanza estabilidad y libertad financiera con estrategias probadas.",
+      imagePath: "/finances.jpg" 
+    }
+  ];
+
+  // Función para navegar a la sección de especialistas filtrada por dimensión
+  const navigateToSpecialists = (dimensionId: string) => {
+    router.push(`/specialists?dimension=${dimensionId}`);
+  };
   
   return (
     <div className="min-h-screen ">
@@ -106,7 +145,7 @@ export default function Component() {
               </span>
             </h1>
             <p className="text-xl text-gray-600 mb-10 max-w-2xl mx-auto">
-              Tu plataforma digital para el bienestar integral, conectándote con especialistas globales para mejorar tu salud física, mental, emocional, espiritual y financiera.
+              Conectándote con especialistas globales para mejorar tu salud física, mental, emocional, espiritual y financiera.
             </p>
             <Button 
               size="lg" 
@@ -183,8 +222,8 @@ export default function Component() {
                 <div className="rounded-full bg-orange-100 p-3 w-14 h-14 flex items-center justify-center mx-auto mb-4">
                   <Activity className="h-7 w-7 text-orange-600" />
                 </div>
-                <h3 className="font-bold text-lg mb-2 text-gray-800">Resultados Probados</h3>
-                <p className="text-gray-600">Metodología basada en evidencia y con resultados medibles en el tiempo.</p>
+                <h3 className="font-bold text-lg mb-2 text-gray-800">Especialistas del bienestar</h3>
+                <p className="text-gray-600">Tradicionales, funcionales, alternativos y holísticos en un solo lugar</p>
               </div>
             </div>
           </div>
@@ -197,98 +236,31 @@ export default function Component() {
         <div className="container mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Esferas del Bienestar</h2>
           <p className="text-gray-600 text-center mb-12 max-w-2xl mx-auto">
-            Descubre y desarrolla cada aspecto de tu bienestar integral
+            Descubre cómo cada dimensión contribuye a tu bienestar integral y encuentra especialistas en cada área
           </p>
+          
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div 
-              className="flex flex-col items-center transition-all hover:-translate-y-2"
-            >
-              <div className="mb-4 rounded-full overflow-hidden w-64 h-64 shadow-lg">
-                <Image 
-                  src="/physical.jpg" 
-                  alt="Bienestar Físico"
-                  width={300}
-                  height={300}
-                  className="w-full h-full object-cover"
-                />
+            {wellnessDimensions.map((dimension) => (
+              <div 
+                key={dimension.id}
+                className="flex flex-col items-center transition-all hover:-translate-y-2 cursor-pointer"
+                onClick={() => navigateToSpecialists(dimension.id)}
+              >
+                <div className="mb-4 rounded-full overflow-hidden w-64 h-64 shadow-lg">
+                  <Image 
+                    src={dimension.imagePath} 
+                    alt={`Bienestar ${dimension.name}`}
+                    width={300}
+                    height={300}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <h3 className="text-2xl font-bold mb-2 text-orange-600">{dimension.name}</h3>
+                <p className="text-gray-600 text-center max-w-xs">
+                  {dimension.description}
+                </p>
               </div>
-              <h3 className="text-2xl font-bold mb-2 text-orange-600">Físico</h3>
-              <p className="text-gray-600 text-center max-w-xs">
-                Mejora tu salud física con rutinas personalizadas y seguimiento de hábitos saludables.
-              </p>
-            </div>
-
-            <div 
-              className="flex flex-col items-center transition-all hover:-translate-y-2"
-            >
-              <div className="mb-4 rounded-full overflow-hidden w-64 h-64 shadow-lg">
-                <Image 
-                  src="/mental.jpg" 
-                  alt="Bienestar Mental"
-                  width={300}
-                  height={300}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <h3 className="text-2xl font-bold mb-2 text-orange-600">Mental</h3>
-              <p className="text-gray-600 text-center max-w-xs">
-                Desarrolla claridad mental y fortaleza cognitiva con prácticas efectivas.
-              </p>
-            </div>
-
-            <div 
-              className="flex flex-col items-center transition-all hover:-translate-y-2"
-            >
-              <div className="mb-4 rounded-full overflow-hidden w-64 h-64 shadow-lg">
-                <Image 
-                  src="/emotional.jpg" 
-                  alt="Bienestar Emocional"
-                  width={300}
-                  height={300}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <h3 className="text-2xl font-bold mb-2 text-orange-600">Emocional</h3>
-              <p className="text-gray-600 text-center max-w-xs">
-                Cultiva inteligencia emocional y equilibrio en tus relaciones.
-              </p>
-            </div>
-
-            <div 
-              className="flex flex-col items-center transition-all hover:-translate-y-2"
-            >
-              <div className="mb-4 rounded-full overflow-hidden w-64 h-64 shadow-lg">
-                <Image 
-                  src="/spirit.jpg" 
-                  alt="Bienestar Espiritual"
-                  width={300}
-                  height={300}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <h3 className="text-2xl font-bold mb-2 text-orange-600">Espiritual</h3>
-              <p className="text-gray-600 text-center max-w-xs">
-                Encuentra paz interior y propósito a través de prácticas contemplativas.
-              </p>
-            </div>
-
-            <div 
-              className="flex flex-col items-center transition-all hover:-translate-y-2"
-            >
-              <div className="mb-4 rounded-full overflow-hidden w-64 h-64 shadow-lg">
-                <Image 
-                  src="/finances.jpg" 
-                  alt="Bienestar Financiero"
-                  width={300}
-                  height={300}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <h3 className="text-2xl font-bold mb-2 text-orange-600">Financiero</h3>
-              <p className="text-gray-600 text-center max-w-xs">
-                Alcanza estabilidad y libertad financiera con estrategias probadas.
-              </p>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -379,7 +351,7 @@ export default function Component() {
                   <div className="rounded-full bg-orange-100/50 p-2 group-hover:bg-orange-100 transition-colors">
                     <TestTube className="h-6 w-6 text-orange-500" />
                   </div>
-                  <CardTitle className="text-xl">Test de Bienestar</CardTitle>
+                  <CardTitle className="text-xl">Ruta de Bienestar</CardTitle>
                 </div>
               </CardHeader>
               <CardContent>
@@ -467,28 +439,31 @@ export default function Component() {
           <Button size="lg" 
           onClick={() => router.push('/test')}
           className="bg-orange-600 hover:bg-orange-700 text-white px-8 py-6 text-lg rounded-full transition-all hover:shadow-lg hover:-translate-y-0.5">
-            Comenzar mi viaje
+            Inicia tu ruta de bienestar
             <ArrowRight className="ml-2 h-5 w-5" />
           </Button>
         </div>
       </section>
 
-
-      {/* Floating Waitlist Container */}
-      <div className="fixed bottom-8 left-1/2 transform -translate-x-1/2 z-50 bg-white/90 backdrop-blur-sm rounded-full shadow-xl border border-orange-100 flex items-center justify-between px-6 py-4 w-11/12 max-w-3xl">
-        <div className="font-medium text-gray-700">
-          Únete a la lista de espera
+      {/* Specialists Waitlist Section */}
+      <section className="py-8 bg-gradient-to-b from-white to-orange-50/70">
+        <div className="container mx-auto px-4">
+          <div className="bg-white/80 backdrop-blur-sm rounded-lg shadow-md border border-orange-100 flex flex-col md:flex-row items-center justify-between py-4 px-6 md:px-8">
+            <div className="font-medium text-gray-700 text-center md:text-left mb-4 md:mb-0">
+              Si eres especialista del bienestar, únete a la lista de espera
+            </div>
+            <Button 
+              className="bg-orange-600 hover:bg-orange-700 text-white px-6 py-2 rounded-full transition-all hover:shadow-md"
+              onClick={() => window.open(formUrl, '_blank')}
+            >
+              Lista de espera
+            </Button>
+          </div>
         </div>
-        <Button 
-          className="bg-orange-600 hover:bg-orange-700 text-white px-6 py-2 rounded-full transition-all hover:shadow-md"
-          onClick={() => window.open(formUrl, '_blank')}
-        >
-          Lista de espera
-        </Button>
-      </div>
+      </section>
 
       {/* Footer */}
-      <footer className="bg-gradient-to-b from-white to-orange-50 py-8 text-center text-gray-600">      
+      <footer className="bg-gradient-to-b from-orange-50/70 to-orange-50 py-8 text-center text-gray-600">      
         <div className="container mx-auto px-4">
           {/* Social Media Icons */}
           <div className="flex justify-center gap-6 mb-6">
