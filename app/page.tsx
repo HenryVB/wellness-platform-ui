@@ -14,7 +14,6 @@ import { FaFacebookF, FaInstagram, FaLinkedinIn, FaSpotify, FaCheck } from "reac
 import Image from "next/image"
 import Link from "next/link"
 import { useRouter } from 'next/navigation'
-import { useState } from "react";
 
 
 

@@ -1,7 +1,7 @@
 // components/test/Roadmap.tsx
 import { useTest } from '@/contexts/TestContext';
 import { WellnessDimension } from '@/types/test';
-import { ArrowLeft, Mail, Copy, Download, CheckCircle } from 'lucide-react';
+import { ArrowLeft, Mail, Download, CheckCircle } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { Button } from '../ui/button';
 import { useState } from 'react';
@@ -20,7 +20,6 @@ export function Roadmap() {
   const router = useRouter();
   const { state } = useTest();
   const result = state.result;
-  const [copied, setCopied] = useState(false);
   const [emailSent, setEmailSent] = useState(false);
 
   // Función para simular envío de correo
@@ -37,21 +36,7 @@ export function Roadmap() {
     }, 3000);
   };
 
-  // Función para copiar link de resultados
-  const handleCopyLink = () => {
-    // En una implementación real, esto generaría un link compartible único
-    const shareableLink = `https://integralmentebien.com/test/results/${Math.random().toString(36).substring(2, 10)}`;
-    navigator.clipboard.writeText(shareableLink);
-    setCopied(true);
-    toast.info("¡Enlace copiado al portapapeles!", {
-      position: "bottom-center",
-      autoClose: 3000
-    });
-    
-    setTimeout(() => {
-      setCopied(false);
-    }, 3000);
-  };
+
 
   // Función para simular descarga del PDF
   const handleDownload = () => {
